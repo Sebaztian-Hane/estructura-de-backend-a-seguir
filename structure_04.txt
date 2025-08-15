@@ -1,0 +1,34 @@
+04_therapists/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── therapist.py        # Modelo de terapeuta
+│   ├── specialization.py   # Especialidades del terapeuta
+│   ├── certification.py    # Certificaciones del terapeuta
+│   └── schedule.py         # Horarios del terapeuta
+├── serializers/
+│   ├── __init__.py
+│   ├── therapist.py        # Serializers de terapeuta
+│   ├── specialization.py   # Serializers de especialidades
+│   ├── certification.py    # Serializers de certificaciones
+│   └── schedule.py         # Serializers de horarios
+├── views/
+│   ├── __init__.py
+│   ├── therapist.py        # Vistas de terapeuta
+│   ├── specialization.py   # Vistas de especialidades
+│   ├── certification.py    # Vistas de certificaciones
+│   └── schedule.py         # Vistas de horarios
+├── services/
+│   ├── __init__.py
+│   ├── therapist_service.py # Servicios de terapeuta
+│   ├── specialization_service.py # Servicios de especialidades
+│   ├── certification_service.py # Servicios de certificaciones
+│   └── schedule_service.py # Servicios de horarios
+├── urls.py                 # Todas las URLs del módulo
+├── admin.py                # Admin de Django
+└── tests/                  # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py

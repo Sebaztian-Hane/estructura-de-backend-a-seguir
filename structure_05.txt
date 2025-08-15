@@ -1,0 +1,34 @@
+05_appointments_status/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── appointment.py      # Modelo de cita
+│   ├── appointment_status.py # Modelo de estado
+│   ├── ticket.py           # Modelo de ticket
+│   └── appointment_note.py # Notas de la cita (si es necesario)
+├── serializers/
+│   ├── __init__.py
+│   ├── appointment.py      # Serializers de cita
+│   ├── appointment_status.py # Serializers de estado
+│   ├── ticket.py           # Serializers de ticket
+│   └── appointment_note.py # Serializers de notas
+├── views/
+│   ├── __init__.py
+│   ├── appointment.py      # Vistas de cita
+│   ├── appointment_status.py # Vistas de estado
+│   ├── ticket.py           # Vistas de ticket
+│   └── appointment_note.py # Vistas de notas
+├── services/
+│   ├── __init__.py
+│   ├── appointment_service.py # Servicios de cita
+│   ├── appointment_status_service.py # Servicios de estado
+│   ├── ticket_service.py   # Servicios de ticket
+│   └── appointment_note_service.py # Servicios de notas
+├── urls.py                 # Todas las URLs del módulo
+├── admin.py                # Admin de Django
+└── tests/                  # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py

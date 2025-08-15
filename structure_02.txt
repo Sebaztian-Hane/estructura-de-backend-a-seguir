@@ -1,0 +1,33 @@
+02_users_profiles/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── user.py           # User (si no está en core)
+│   ├── profile.py        # Profile (si es separado)
+│   └── verification.py   # UserVerificationCode
+├── serializers/
+│   ├── __init__.py
+│   ├── user.py           # User CRUD serializers
+│   ├── profile.py        # Profile management serializers
+│   ├── password.py       # Change password serializers
+│   └── verification.py   # Email verification serializers
+├── views/
+│   ├── __init__.py
+│   ├── user.py           # User CRUD views
+│   ├── profile.py        # Profile management views
+│   ├── password.py       # Change password views
+│   └── verification.py   # Email verification views
+├── services/
+│   ├── __init__.py
+│   ├── user_service.py   # User CRUD logic
+│   ├── profile_service.py # Profile management logic
+│   ├── password_service.py # Password change logic
+│   └── verification_service.py # Email verification logic
+├── urls.py               # Todas las URLs del módulo
+├── admin.py              # Admin de Django
+└── tests/                # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py

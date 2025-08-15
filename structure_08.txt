@@ -1,0 +1,38 @@
+08_company_reports/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── company_info.py      # Información de la empresa
+│   ├── company_setting.py   # Configuraciones de la empresa
+│   ├── report_template.py   # Plantillas de reportes
+│   ├── email_template.py    # Plantillas de email
+│   └── system_log.py        # Logs del sistema (si es necesario)
+├── serializers/
+│   ├── __init__.py
+│   ├── company_info.py      # Serializers de información de empresa
+│   ├── company_setting.py   # Serializers de configuraciones
+│   ├── report_template.py   # Serializers de plantillas de reportes
+│   ├── email_template.py    # Serializers de plantillas de email
+│   └── system_log.py        # Serializers de logs
+├── views/
+│   ├── __init__.py
+│   ├── company_info.py      # Vistas de información de empresa
+│   ├── company_setting.py   # Vistas de configuraciones
+│   ├── report_template.py   # Vistas de plantillas de reportes
+│   ├── email_template.py    # Vistas de plantillas de email
+│   └── system_log.py        # Vistas de logs
+├── services/
+│   ├── __init__.py
+│   ├── company_service.py   # Servicios de empresa
+│   ├── report_service.py    # Servicios de reportes
+│   ├── email_service.py     # Servicios de email
+│   ├── statistics_service.py # Servicios de estadísticas
+│   └── system_log_service.py # Servicios de logs
+├── urls.py                  # Todas las URLs del módulo
+├── admin.py                 # Admin de Django
+└── tests/                   # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py

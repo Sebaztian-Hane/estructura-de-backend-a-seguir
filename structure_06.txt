@@ -1,0 +1,38 @@
+06_histories_configurations/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── document_type.py    # Tipos de documento
+│   ├── history.py          # Historias clínicas
+│   ├── payment_type.py     # Tipos de pago
+│   ├── predetermined_price.py # Precios predeterminados
+│   └── system_config.py    # Configuraciones generales del sistema
+├── serializers/
+│   ├── __init__.py
+│   ├── document_type.py    # Serializers de tipos de documento
+│   ├── history.py          # Serializers de historias clínicas
+│   ├── payment_type.py     # Serializers de tipos de pago
+│   ├── predetermined_price.py # Serializers de precios predeterminados
+│   └── system_config.py    # Serializers de configuraciones del sistema
+├── views/
+│   ├── __init__.py
+│   ├── document_type.py    # Vistas de tipos de documento
+│   ├── history.py          # Vistas de historias clínicas
+│   ├── payment_type.py     # Vistas de tipos de pago
+│   ├── predetermined_price.py # Vistas de precios predeterminados
+│   └── system_config.py    # Vistas de configuraciones del sistema
+├── services/
+│   ├── __init__.py
+│   ├── document_type_service.py # Servicios de tipos de documento
+│   ├── history_service.py  # Servicios de historias clínicas
+│   ├── payment_type_service.py # Servicios de tipos de pago
+│   ├── predetermined_price_service.py # Servicios de precios predeterminados
+│   └── system_config_service.py # Servicios de configuraciones del sistema
+├── urls.py                 # Todas las URLs del módulo
+├── admin.py                # Admin de Django
+└── tests/                  # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py

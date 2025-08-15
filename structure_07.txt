@@ -1,0 +1,38 @@
+07_ubigeo_locations/
+├── __init__.py
+├── apps.py
+├── models/
+│   ├── __init__.py
+│   ├── country.py          # Modelo de país
+│   ├── region.py           # Modelo de región/departamento
+│   ├── province.py         # Modelo de provincia
+│   ├── district.py         # Modelo de distrito
+│   └── address.py          # Modelo de dirección (si es necesario)
+├── serializers/
+│   ├── __init__.py
+│   ├── country.py          # Serializers de país
+│   ├── region.py           # Serializers de región
+│   ├── province.py         # Serializers de provincia
+│   ├── district.py         # Serializers de distrito
+│   └── address.py          # Serializers de dirección
+├── views/
+│   ├── __init__.py
+│   ├── country.py          # Vistas de país
+│   ├── region.py           # Vistas de región
+│   ├── province.py         # Vistas de provincia
+│   ├── district.py         # Vistas de distrito
+│   └── address.py          # Vistas de dirección
+├── services/
+│   ├── __init__.py
+│   ├── country_service.py  # Servicios de país
+│   ├── region_service.py   # Servicios de región
+│   ├── province_service.py # Servicios de provincia
+│   ├── district_service.py # Servicios de distrito
+│   └── address_service.py  # Servicios de dirección
+├── urls.py                 # Todas las URLs del módulo
+├── admin.py                # Admin de Django
+└── tests/                  # Tests del módulo
+    ├── __init__.py
+    ├── test_models.py
+    ├── test_views.py
+    └── test_services.py
