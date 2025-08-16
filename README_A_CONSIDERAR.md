@@ -101,6 +101,86 @@
 
 ---
 
+## 📁 **GESTIÓN DE ARCHIVOS Y CONFIGURACIÓN**
+
+### **🚫 ENTORNO VIRTUAL - NO SUBIR AL REPOSITORIO**
+- ❌ **NO** subir la carpeta `venv/` o `env/` al repositorio
+- ❌ **NO** subir archivos `.pyc` o `__pycache__/`
+- ❌ **NO** subir archivos de configuración local
+- ✅ **SÍ** crear archivo `requirements.txt` con dependencias
+- ✅ **SÍ** documentar versión de Python y Django requerida
+
+### **📋 CARPETA CONFIG - DOCUMENTACIÓN OBLIGATORIA**
+La carpeta `config/` se crea automáticamente al inicializar un proyecto Django y contiene:
+
+#### **Archivos Principales:**
+- **`__init__.py`**: Archivo de inicialización del paquete
+- **`settings.py`**: Configuración principal del proyecto Django
+- **`urls.py`**: URLs principales del proyecto
+- **`wsgi.py`**: Configuración para despliegue WSGI
+- **`asgi.py`**: Configuración para despliegue ASGI
+
+#### **Documentación Requerida:**
+- [ ] **Configuración de base de datos** documentada
+- [ ] **Variables de entorno** especificadas
+- [ ] **APPs instaladas** listadas y justificadas
+- [ ] **Middleware configurado** documentado
+- [ ] **Configuración de JWT** especificada
+- [ ] **Configuración de CORS** documentada
+- [ ] **Configuración de archivos estáticos** especificada
+
+#### **Estructura de la Carpeta Config:**
+```
+config/
+├── __init__.py
+├── settings.py          # Configuración principal
+├── urls.py             # URLs del proyecto
+├── wsgi.py             # Configuración WSGI
+├── asgi.py             # Configuración ASGI
+└── README_CONFIG.md     # Documentación obligatoria
+```
+
+#### **Archivo .gitignore Obligatorio:**
+Cada módulo debe tener un `.gitignore` que incluya:
+
+```gitignore
+# Entorno virtual
+venv/
+env/
+.venv/
+.env/
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Archivos de configuración local
+.env
+.env.local
+.env.production
+
+# Base de datos
+*.db
+*.sqlite3
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+```
+
+---
+
 ## 📋 **ESTRUCTURA PERMITIDA POR MÓDULO**
 
 ```
@@ -388,6 +468,14 @@ nombre_modulo/
 - **Tests unitarios**: Para validación automática
 - **NO usar navegador web** para testing
 
+### **6. Gestión de Archivos (CRÍTICO)**
+- **NO subir entorno virtual** al repositorio
+- **NO subir archivos .pyc** o __pycache__/
+- **SÍ crear requirements.txt** con dependencias exactas
+- **SÍ documentar carpeta config** completamente
+- **SÍ configurar .gitignore** antes de hacer commit
+- **SÍ especificar versiones** de Python y Django
+
 ---
 
 ## 🎯 **MÉTRICAS DE ÉXITO DIARIAS (ASIGNACIÓN REAL)**
@@ -464,6 +552,14 @@ nombre_modulo/
 - [ ] **Admin Django** configurado
 - [ ] **Tests unitarios** implementados
 - [ ] **Django Shell** para testing manual
+
+### **📁 GESTIÓN DE ARCHIVOS OBLIGATORIA:**
+- [ ] **NO subir entorno virtual** (venv/, env/) al repositorio
+- [ ] **NO subir archivos .pyc** o __pycache__/ al repositorio
+- [ ] **SÍ crear requirements.txt** con todas las dependencias
+- [ ] **SÍ documentar carpeta config** con README_CONFIG.md
+- [ ] **SÍ especificar versiones** de Python y Django
+- [ ] **SÍ configurar .gitignore** correctamente
 
 ---
 
