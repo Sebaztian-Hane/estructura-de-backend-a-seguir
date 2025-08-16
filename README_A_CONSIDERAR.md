@@ -110,6 +110,37 @@
 - ✅ **SÍ** crear archivo `requirements.txt` con dependencias
 - ✅ **SÍ** documentar versión de Python y Django requerida
 
+### **🧹 LIMPIEZA OBLIGATORIA DEL REPOSITORIO**
+- ❌ **NO** subir carpetas `__pycache__/` en ningún módulo
+- ❌ **NO** subir archivos `.pyc` compilados
+- ❌ **NO** subir archivos `.pyo` optimizados
+- ❌ **NO** subir archivos `.pyd` de Windows
+- ❌ **NO** subir carpetas `migrations/` con archivos de migración
+- ❌ **NO** subir archivos de base de datos local
+- ❌ **NO** subir logs o archivos temporales
+
+### **📁 MIGRACIONES - CARPETAS VACÍAS OBLIGATORIAS**
+- ✅ **SÍ** mantener carpetas `migrations/` pero VACÍAS
+- ✅ **SÍ** incluir solo `__init__.py` en cada carpeta migrations
+- ✅ **SÍ** NO incluir archivos `0001_initial.py`, `0002_*.py`, etc.
+- ✅ **SÍ** crear migraciones solo cuando sea necesario para testing
+- ✅ **SÍ** limpiar migraciones antes de hacer commit
+
+### **🔧 COMANDOS DE LIMPIEZA OBLIGATORIOS:**
+```bash
+# Limpiar archivos Python compilados
+find . -type f -name "*.pyc" -delete
+find . -type d -name "__pycache__" -exec rm -rf {} +
+
+# Limpiar migraciones (mantener solo __init__.py)
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+
+# Limpiar archivos temporales
+find . -name "*.tmp" -delete
+find . -name "*.temp" -delete
+find . -name "*.log" -delete
+```
+
 ### **📋 CARPETA CONFIG - DOCUMENTACIÓN OBLIGATORIA**
 La carpeta `config/` se crea automáticamente al inicializar un proyecto Django y contiene:
 
@@ -150,11 +181,17 @@ env/
 .venv/
 .env/
 
-# Archivos Python compilados
+# Archivos Python compilados - CRÍTICO NO SUBIR
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyo
+*.pyd
+
+# Migraciones - SOLO MANTENER __init__.py
+*/migrations/*.py
+!*/migrations/__init__.py
 
 # Archivos de configuración local
 .env
@@ -164,6 +201,7 @@ __pycache__/
 # Base de datos
 *.db
 *.sqlite3
+*.sqlite
 
 # Archivos de IDE
 .vscode/
@@ -171,12 +209,38 @@ __pycache__/
 *.swp
 *.swo
 
-# Logs
+# Logs y archivos temporales
 *.log
-
-# Archivos temporales
 *.tmp
 *.temp
+*.bak
+*.backup
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de testing local
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+```
+
+#### **⚠️ IMPORTANTE - ANTES DE CADA COMMIT:**
+```bash
+# 1. Limpiar archivos compilados
+find . -type f -name "*.pyc" -delete
+find . -type d -name "__pycache__" -exec rm -rf {} +
+
+# 2. Limpiar migraciones (mantener solo __init__.py)
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+
+# 3. Verificar que no hay archivos innecesarios
+git status
+git add .
+git commit -m "Módulo [nombre] - APIs implementadas"
 ```
 
 ---
@@ -476,90 +540,13 @@ nombre_modulo/
 - **SÍ configurar .gitignore** antes de hacer commit
 - **SÍ especificar versiones** de Python y Django
 
----
-
-## 🎯 **MÉTRICAS DE ÉXITO DIARIAS (ASIGNACIÓN REAL)**
-
-### **LUNES**
-- ✅ 01_architect (Sala 3): 100% funcional
-- ✅ 07_ubigeo_locations (Sala 7): 100% funcional
-- ✅ 06_histories_configurations (Sala 6): 80% funcional
-
-### **MARTES**
-- ✅ 02_users_profiles (Sala 4): 100% funcional
-- ✅ 04_therapists (Sala 1): 100% funcional
-- ✅ 03_patients_diagnoses (Sala 5): 80% funcional
-
-### **MIÉRCOLES**
-- ✅ 05_appointments_status (Sala 2): 80% funcional
-- ✅ 08_company_reports (Sala 8): 80% funcional
-- ✅ Integración entre módulos: 60% funcional
-
-### **JUEVES**
-- ✅ Sistema completo: 95% funcional
-- ✅ Testing: 100% completado
-- ✅ Performance: Optimizado
-
-### **VIERNES**
-- ✅ Sistema: 100% funcional
-- ✅ Entrega: 100% exitosa
-- ✅ Documentación: 100% completa
-
----
-
-## 🚫 **CHECKLIST DE RESTRICCIONES - TODAS LAS SALAS**
-
-### **❌ PROHIBIDO IMPLEMENTAR:**
-- [ ] **NO** archivos HTML, CSS o JavaScript
-- [ ] **NO** templates de Django para vistas web
-- [ ] **NO** interfaces de usuario visuales
-- [ ] **NO** formularios HTML
-- [ ] **NO** páginas web
-- [ ] **NO** frameworks frontend
-- [ ] **NO** estilos o componentes visuales
-- [ ] **NO** navegación web
-
-### **🚨 LENGUAJES TERMINANTEMENTE PROHIBIDOS:**
-- [ ] **TERMINANTEMENTE NO** código PHP
-- [ ] **TERMINANTEMENTE NO** código JavaScript/Node.js
-- [ ] **TERMINANTEMENTE NO** código Java
-- [ ] **TERMINANTEMENTE NO** código C#/.NET
-- [ ] **TERMINANTEMENTE NO** código Ruby
-- [ ] **TERMINANTEMENTE NO** código Go
-- [ ] **TERMINANTEMENTE NO** código Rust
-- [ ] **TERMINANTEMENTE NO** código Scala
-- [ ] **TERMINANTEMENTE NO** código Kotlin
-- [ ] **TERMINANTEMENTE NO** código Swift
-
-### **✅ OBLIGATORIO IMPLEMENTAR:**
-- [ ] **SÍ** APIs REST completas
-- [ ] **SÍ** Modelos de base de datos
-- [ ] **SÍ** Serializers JSON
-- [ ] **SÍ** Views de API
-- [ ] **SÍ** URLs de endpoints
-- [ ] **SÍ** Admin de Django
-- [ ] **SÍ** Tests unitarios
-- [ ] **SÍ** Documentación de APIs
-
-### **✅ LENGUAJE ÚNICAMENTE PERMITIDO:**
-- [ ] **SÍ** Python 3.x (3.8+)
-- [ ] **SÍ** Django 4.x (4.2+)
-- [ ] **SÍ** Django REST Framework
-- [ ] **SÍ** Librerías Python aprobadas
-
-### **🧪 HERRAMIENTAS DE TESTING OBLIGATORIAS:**
-- [ ] **Postman** configurado para el módulo
-- [ ] **Admin Django** configurado
-- [ ] **Tests unitarios** implementados
-- [ ] **Django Shell** para testing manual
-
-### **📁 GESTIÓN DE ARCHIVOS OBLIGATORIA:**
-- [ ] **NO subir entorno virtual** (venv/, env/) al repositorio
-- [ ] **NO subir archivos .pyc** o __pycache__/ al repositorio
-- [ ] **SÍ crear requirements.txt** con todas las dependencias
-- [ ] **SÍ documentar carpeta config** con README_CONFIG.md
-- [ ] **SÍ especificar versiones** de Python y Django
-- [ ] **SÍ configurar .gitignore** correctamente
+### **7. Limpieza del Repositorio (OBLIGATORIO)**
+- **NO subir __pycache__** en ningún módulo
+- **NO subir archivos de migración** (0001_*.py, 0002_*.py, etc.)
+- **SÍ mantener carpetas migrations** pero VACÍAS
+- **SÍ ejecutar comandos de limpieza** antes de cada commit
+- **SÍ verificar repositorio limpio** antes de subir
+- **SÍ usar solo __init__.py** en carpetas migrations
 
 ---
 
